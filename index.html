@@ -56,7 +56,279 @@
         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
           data-bs-parent="#accordionExample">
           <div class="accordion-body">
-            <zero-md src="wk53.md"></zero-md>
+            <h3><strong>Laravel 6&nbsp;Essential Training: Testing, Securing and Deploying Apps</strong><br />
+              &nbsp;</h3>
+              
+              <div style="background:#eeeeee;border:1px solid #cccccc;padding:5px 10px;"><strong>8.&nbsp; Security</strong></div>
+              
+              <h4><br />
+              <code>8.1 Authentication</code><br />
+              &nbsp;</h4>
+              
+              <ol>
+                <li>De onderstaande code is al in de Laravel 5 cursus uitgevoerd en hoeft niet nog een keer gedaan te worden.<br />
+                &nbsp;
+                <ol>
+                  <li>
+                  <p><kbd>composer require laravel/ui &quot;3.0&quot; --dev</kbd><br />
+                  &nbsp;</p>
+                  </li>
+                  <li>
+                  <p>Als de bovenstaande versie niet werkt moet je op de site van packagist.org de juiste versie zoeken. De versie moet matchen met de php versie die je gebruikt. (<a href="https://packagist.org/packages/laravel/ui">https://packagist.org/packages/laravel/ui</a>)<br />
+                  &nbsp;</p>
+                  </li>
+                  <li>
+                  <p><kbd>php artisan ui bootstrap&nbsp;--auth</kbd>&nbsp;Wij gebruiken bootstrap in plaats van vue.js<br />
+                  &nbsp;</p>
+                  </li>
+                  <li>
+                  <p>Het bestand Router.php is herschreven. Er bestaat in dit bestand geen method <code>auth</code> meer. De method die er in dichtste in de buurt komt wat betreft functionaliteit is de method <code>get</code> op regel 143.<br />
+                  <br />
+                  <br />
+                  <img alt="Knipsel_58.PNG" src="https://mboutrecht.onderwijsonline.nl/manage/content/lessonfile/YyJ6RgyQ/eyJpdiI6IjE1VVZYclU5bWNEUVVoeGpwNm9HWVE9PSIsInZhbHVlIjoiR1pHdVNEVzRJK2ZiMXE3bXhTK3VaZEtvdHJCc3llbnMzYkhIaG1kTm9UYz0iLCJtYWMiOiJmZjA0NDE0ZWQ4YWM1ODNhODQyNGUzY2U5YzI2MDQyOGI0YjhhYThkNDI5YmYyYWUyZWJjYWQ1N2RkNWRhOGRiIn0=" style="height:247px; width:600px" /><br />
+                  <br />
+                  &nbsp;</p>
+                  </li>
+                  <li>
+                  <p>De migration is bijna gelijk op het id() veld na. Toch zijn ze hetzelfde want id() is een alias voor BigIncrements(). Zie&nbsp;<a href="https://laravel.com/docs/8.x/migrations#available-column-types">https://laravel.com/docs/8.x/migrations#available-column-types</a><br />
+                  <br />
+                  <br />
+                  <img alt="Knipsel_60.PNG" src="https://mboutrecht.onderwijsonline.nl/manage/content/lessonfile/YyJ6RgyQ/eyJpdiI6IkE3ZzVyS0hTOXd3RkQ1dFZ4V1FVOUE9PSIsInZhbHVlIjoia1czaEFhZkg4ODdKZUh2bkw2SUIrNjZrR0ljXC9FTGZnZGdpQTJHYURGVDg9IiwibWFjIjoiZjkwMWY3NDBlNTIyM2U0YzgwYzI1YTE3MDQyZTNjMjc3NWVhZjAyYzJiMmY5OTA5ZDJhMzdjZmFlOGUzODU0MCJ9" style="height:191px; width:600px" /><br />
+                  <br />
+                  <br />
+                  <img alt="Knipsel_59.PNG" src="https://mboutrecht.onderwijsonline.nl/manage/content/lessonfile/YyJ6RgyQ/eyJpdiI6IlpYQjBvNXpnUHBENUd0bHNqbG9ET2c9PSIsInZhbHVlIjoiYmVhbER3REhwTUs5TmptXC90SzFXdkNrOHBaZVB1dVNlNmdHc0o3OEJRRk09IiwibWFjIjoiMWQxYzY4ZTFmMzdmNDc0YjZiNmM3NTM4YjNiOTllNjBkMjNmMTEzYTkwM2UxOTg0NWYzYTM3Y2FjODEwMGIzZSJ9" style="height:445px; width:600px" /><br />
+                  &nbsp;</p>
+                  </li>
+                  <li>
+                  <p>De model User.php is indentiek.<br />
+                  &nbsp;</p>
+                  </li>
+                  <li>
+                  <p>Verder geen problemen in deze video.<br />
+                  <br />
+                  &nbsp;</p>
+                  </li>
+                </ol>
+                </li>
+              </ol>
+              
+              <h4><code>8.2 Route authorization</code></h4>
+              
+              <p>&nbsp;</p>
+              
+              <ol>
+                <li>Het bestand AuthenticatesUsers.php&nbsp;zit nu in de package <code>Laravel/ui</code> en bevindt zich nu in de map:&nbsp;<br />
+                <kbd>vendor/laravel/ui/auth-backend/AuthenticatesUsers.php</kbd>&nbsp;maar is ongewijzigd.<br />
+                <br />
+                <br />
+                <img alt="Knipsel_61.PNG" src="https://mboutrecht.onderwijsonline.nl/manage/content/lessonfile/YyJ6RgyQ/eyJpdiI6IlU1VzZ1Q2k0cE4rakNsVkFaT3Q5Nmc9PSIsInZhbHVlIjoiZG9LN0VBdzg2bDNXOUZ6MTQ2V0tiRlV0UVI1cUQ0eVlxMUVTcWQwTmVPRT0iLCJtYWMiOiJlZmJkZGE0YmM3MTBjN2ZkMmIzYjgzZjBkMjhmNTk0ZWM3YTMxNjkwZjMyZDgyNDQ0MmM4ZmU0MTJkZTIxMDgyIn0=" style="height:228px; width:600px" /><br />
+                <br />
+                &nbsp;</li>
+                <li>Door het toevoegen van de <kbd>$this-&gt;middleware(&#39;auth&#39;)</kbd> method in de constructor van de <code>BookingController</code> class (de constructor moet je zelf maken want hij staat er nog niet. Denk om de dubbele underscore dus <code>__</code>construct() ) beveilig je de gehele booking functionaliteit tegen niet ingelogde (niet geauthoriseerde) gebruikers. Test dit door nu naar de bookingspagina te gaan. Wanneer je nog niet bent ingelogd wordt je doorverwezen naar de loginpagina. Na inloggen wordt je alsnog doorgestuurd naar de bookingspagina. Ben je wel ingelogd dan kom je direct op de pagina.&nbsp;<br />
+                <br />
+                <br />
+                <img alt="Knipsel_62.PNG" src="https://mboutrecht.onderwijsonline.nl/manage/content/lessonfile/YyJ6RgyQ/eyJpdiI6IklvdzN2U2JJR2NnXC9oZWNPZlcyVVJnPT0iLCJ2YWx1ZSI6InZQRXpQR3NDRW1LeExjcDg0UjRWS1NGeXVLNVZ4UkdFZ24rdVVRUWFQUTg9IiwibWFjIjoiZjY5NTBiNmU0Y2VjMjhkOWQxZjZjOWRmY2NhMGEzMTc1NjFjNTJmNTU2MTAyYTE2OTY2NzdjODkxNGI1N2JhZiJ9" style="height:570px; width:600px" /><br />
+                <br />
+                &nbsp;</li>
+                <li>Verder geen problemen in deze video<br />
+                &nbsp;</li>
+              </ol>
+              
+              <p>&nbsp;</p>
+              
+              <h4><code>8.3 Verified users</code></h4>
+              
+              <p>&nbsp;</p>
+              
+              <ol>
+                <li>Geen problemen in deze video<br />
+                <br />
+                <img alt="Knipsel_63.PNG" src="https://mboutrecht.onderwijsonline.nl/manage/content/lessonfile/YyJ6RgyQ/eyJpdiI6Im5JZGE2WFcrNnpRaVUyQlFaZkcyOFE9PSIsInZhbHVlIjoiMUUwMlVyOE9vb2ZKaGZtOGt4dDIzd3FScXN4cFJkUWNoS2h5bTNmQnNPTT0iLCJtYWMiOiI1MDJmYTYxYTlkNjZjMTc5Mjg3ZjkwYWI3YjgxZGVmZTFiMjAwNzYzMWJjNTAzOWYyOWNhMWIxMjQ3Mjc2ODJiIn0=" style="height:405px; width:720px" /><br />
+                <br />
+                <br />
+                <br />
+                <img alt="Knipsel_64.PNG" src="https://mboutrecht.onderwijsonline.nl/manage/content/lessonfile/YyJ6RgyQ/eyJpdiI6Im4yZmdhM2dIVXdiQStvNWVHSDRcL0NRPT0iLCJ2YWx1ZSI6ImtoXC8ySDQ1alYzbnVNXC9oTVR4VXg1dWNIcXdKQkNlcVMrd3pEXC9Fd1pOM289IiwibWFjIjoiN2ViNzk5OTc2MjA0ZjI4YWVmMzFlYWU5ZDMxOWVhZWY1OTdiZTQxYWVmMTVkNjkxN2FiYjE5NDQxNTM5ZjgyNSJ9" style="height:405px; width:720px" /><br />
+                <br />
+                &nbsp;</li>
+                <li>Alles werkte goed. Kijk wel goed naar hoofdletters, quootjes, typo&#39;s in je code. Als het niet lukt ligt het meestal daaraan.</li>
+              </ol>
+              
+              <p>&nbsp;</p>
+              
+              <h4><code>8.4 Encryption</code></h4>
+              
+              <p>&nbsp;</p>
+              
+              <ol>
+                <li>Zorg dat je emailclient <code>MailHog</code> aanstaat als je gaat inloggen. Het kan namelijk&nbsp;zijn dat je nog moet verifieren via de mail. Verder werkt de encryptie goed (zie onderstaande afbeeldingen)<br />
+                <br />
+                <img alt="Knipsel_65.PNG" src="https://mboutrecht.onderwijsonline.nl/manage/content/lessonfile/YyJ6RgyQ/eyJpdiI6IjlVSXhlQ21XaWhhUFdRTFo5ZEhtOFE9PSIsInZhbHVlIjoiU3FNeENOclFwV1Jpalphd2lmNldyNkRXRUtZSGVnekt3eVpcL1R4N0daWEU9IiwibWFjIjoiYjFiODJmZWZhZDY3ZDkwMzRhYTBmNDE3NzE4MWJkNWE4MDNlYjhjMjY5MDcwYWZlY2ZjOGM5NGM4ZGE0MWVhNiJ9" style="height:405px; width:720px" /><br />
+                <br />
+                <br />
+                <img alt="Knipsel_66.PNG" src="https://mboutrecht.onderwijsonline.nl/manage/content/lessonfile/YyJ6RgyQ/eyJpdiI6IjBrYXh5T3Y2Vk5RXC9qekhUMnRsMVwvZz09IiwidmFsdWUiOiJWdER1UlI0NWZLa0tzdFB2dmZ2eVEwM1dLUnpla3F0c3JKN1gxb1RCSm5zPSIsIm1hYyI6ImJjNTA0YWRkNmE0ZmVmNzkzZWE0ZTc4MWM4YmYxNTdmZjViMmEzNTc0YTZlZjUxNWYzNGQ3NDM1MjRiZDE3ZmUifQ==" style="height:405px; width:720px" /><br />
+                <br />
+                &nbsp;</li>
+                <li>Verder geen problemen in deze video</li>
+              </ol>
+              
+              <p>&nbsp;</p>
+              
+              <h4><code>8.5 Password storage</code><br />
+              <br />
+              &nbsp;</h4>
+              
+              <ol>
+                <li>Hash werkte zonder problemen.&nbsp;<br />
+                <br />
+                <br />
+                <img alt="Knipsel_68.PNG" src="https://mboutrecht.onderwijsonline.nl/manage/content/lessonfile/YyJ6RgyQ/eyJpdiI6IkR2YWpnUk5KbWJqUVo2VUJNT3NaU3c9PSIsInZhbHVlIjoiNlV6bVVXUlh4b3RPa0VqbWh2MGt0NkNXM2NxZWJrM1B6Umg4Mm83XC9MMmM9IiwibWFjIjoiYTc0OGIyNzQ3OGUzZjQ2ZDNjYTkwZDU0MzU5ZWY4NDEwYTgwODNhODk0Mjc3YmVkMTcxZDJhNDdlNzVlN2RjNSJ9" style="height:405px; width:720px" /><br />
+                <br />
+                <br />
+                <img alt="Knipsel_67.PNG" src="https://mboutrecht.onderwijsonline.nl/manage/content/lessonfile/YyJ6RgyQ/eyJpdiI6IkloUlBOTmFzYzc3WmtYQUtTNVNTVmc9PSIsInZhbHVlIjoiNEdXSXFGcTZHQmFqdjNrVUVcL09PbjNBNytJcXlZVFwvNGVhVzU5QTVxdFA0PSIsIm1hYyI6IjMwMjNlOWMwYzNmYmUwYTliOGYxN2IwZDA2OWZhNmU2YWUzNGVhYjA5NWI3YTZkYTg0NjFjNDUxZWNkZDJmYjEifQ==" style="height:405px; width:720px" /><br />
+                <br />
+                &nbsp;</li>
+                <li>Verder geen problemen in deze video</li>
+              </ol>
+              
+              <p>&nbsp;</p>
+              
+              <div style="background:#eeeeee;border:1px solid #cccccc;padding:5px 10px;"><strong>9.&nbsp; Deployment</strong></div>
+              
+              <h4><br />
+              <code>9.1 Peparing for deployment</code><br />
+              &nbsp;</h4>
+              
+              <ol>
+                <li>Maak een commit in je huidige (wwarschijnlijk master) branch.
+                <ol>
+                  <li>git add --all</li>
+                  <li>git commit -m &quot;Commit voordat we beginnen aan heroku&quot;</li>
+                  <li>git status (geeft de message nothing to commit, workingdirectory clean)<br />
+                  &nbsp;</li>
+                </ol>
+                </li>
+                <li>Om ervoor te zorgen dat we altijd terug kunnen naar de oude situatie als al de onderstaande handelingen fout gaan maak je een nieuwe branch heroku1 met het onderstaande commando<br />
+                &nbsp;
+                <ol>
+                  <li>git checkout -b heroku1<br />
+                  &nbsp;</li>
+                </ol>
+                </li>
+                <li>Check met git branch of je nu op de heroku1 branch zit.</li>
+                <li>log in met:<br />
+                &nbsp;
+                <ol>
+                  <li>heroku login<br />
+                  &nbsp;</li>
+                </ol>
+                </li>
+                <li>Maak een Procfile met:
+                <ol>
+                  <li>echo &quot;web: vendor/bin/heroku-php-apache2 public/&quot; &gt; Procfile<br />
+                  &nbsp;</li>
+                </ol>
+                </li>
+                <li>Maak een comit met
+                <ol>
+                  <li>git commit -m &quot;Initial Procfile&quot;<br />
+                  &nbsp;</li>
+                </ol>
+                </li>
+                <li>Maak een App met:<br />
+                &nbsp;
+                <ol>
+                  <li>heroku create.<br />
+                  &nbsp;</li>
+                </ol>
+                </li>
+                <li>Er is nu ook een remote gemaakt (git remote -v show) en op de heroku site (ga naar de site en checlk dit) een nieuwe app. Je kunt nu ook naar de basisapp van heroku kijken via de gegeven url. Er is ook een git repository gemaakt op heroku.<br />
+                &nbsp;</li>
+                <li>Maak een APP_KEY aan met:
+                <ol>
+                  <li>heroku config:set APP_KEY=$(php artisan --no-ansi key:generate --show)</li>
+                  <li>. De APP_KEY staat nu ook in de config-vars op de heroku site<br />
+                  &nbsp;</li>
+                </ol>
+                </li>
+                <li>Push nu de lokale branch naar via de zojuist bij stap 5 gemaakt remote naar de master branch op heroku met:&nbsp;
+                <ol>
+                  <li>git push heroku heroku1:master</li>
+                  <li>heroku is hier mijn remotelink&nbsp;<a href="https://git.heroku.com/tranquil-beyond-71717.git">https://git.heroku.com/tranquil-beyond-71717.git</a>&nbsp;afgekort mijn remote</li>
+                  <li>heroku1 is mijn branch waar ik op zit.<br />
+                  &nbsp;</li>
+                </ol>
+                </li>
+                <li>Wanneer het niet is gelukt is het waarschijnlijk je Procfile. Verander van UTF-16 LE naar UTF-8 in Visual Studio&nbsp;code. Update ook even je composer-lock.json file met het commando composer update. Vergeet niet na beiden aanpassingen een commit te maken en push weer met
+                <ol>
+                  <li>git push heroku heroku1:master</li>
+                  <li>Zie ook&nbsp;<a href="https://help.heroku.com/CH22EKEK/why-am-i-seeing-push-failed-can-not-parse-procfile-when-deploying-my-app">https://help.heroku.com/CH22EKEK/why-am-i-seeing-push-failed-can-not-parse-procfile-when-deploying-my-app</a>.</li>
+                  <li>Ook deze link kan je verder helpen&nbsp;<a href="https://github.com/composer/composer/issues/8465">https://github.com/composer/composer/issues/8465</a><br />
+                  &nbsp;</li>
+                </ol>
+                </li>
+                <li>Open de site door&nbsp;ctrl + click&nbsp;uit te voeren op de url in je terminaltekst gegenereerd door het commando van stap 11.1 hierboven<br />
+                &nbsp;</li>
+              </ol>
+              
+              <h4><code>9.2 Databases</code></h4>
+              
+              <ol>
+                <li>We maken een postgresql database aan met:<br />
+                heroku addons:create heroku-postgresql:hobby-dev --remote heroku<br />
+                Let op --remote heroku, mijn remote heet namelijk heroku. Je kunt de naam van jouw remote vinden met het commando git remote -v show.&nbsp;</li>
+                <li>Bij de Config-Vars op de heroku site is nu een DATABASE_URL property erbij gekomen</li>
+                <li>Maak nu bij de Config Vars op heroku site een nieuwe DB_CONNECTION=pgsql<br />
+                property&nbsp; - value paar.</li>
+                <li>Pas config/database.php aan</li>
+                <li>Pas&nbsp;database/migrations/create_hotel_tables.php&nbsp;aan&nbsp; (verwijder bij schema &#39;rates&#39; de index(&#39;room_type_id&#39;)). Dit moet gedaan worden omdat we een pgsql database hebben gemaakt en geen mysql database</li>
+                <li>Maak een commit</li>
+                <li>Doe een migration bij heroku met:<br />
+                heroku run php artisan migrate:fresh --seed --force --remote heroku</li>
+                <li>Ga naar de site en probeer je te registreren. Je krijgt dan een 500 | server error</li>
+                <li>We moeten nog een mailserver maken die onze mail opvangt. Er is niet een gratis mailserver die je zonder dat je creditcardgegevens moet opgeven kunt gebruiken bij heroku. We kunnen wel een ander mailserver gebruiken mailtrap. Ga naar&nbsp;<a href="https://mailtrap.io/">https://mailtrap.io/</a>&nbsp;en maak een account aan.</li>
+                <li>Log in bij mailtrap en ga naar je inboxes =&gt; myinbox =&gt; smtp-settings =&gt;integrations =&gt; kies uit de select laraval. De onderstaande gegevens zijn mijn gegevens dus die kun je niet gebruiken maar je moet je eigen gegevens in de Config Vars zetten van heroku. Ga dit nu doen.<br />
+                <kbd>MAIL_MAILER=smtp<br />
+                MAIL_HOST=smtp.mailtrap.io<br />
+                MAIL_PORT=2525<br />
+                MAIL_USERNAME=f9073905341239<br />
+                MAIL_PASSWORD=e62796bb121235<br />
+                MAIL_ENCRYPTION=tls</kbd></li>
+                <li>Ga terug naar de site en test of het registreren nu wel lukt. Het registratiemailtje vind je bij mailtrap.io</li>
+                <li>We moeten nu nog even afvangen dat iemand zijn email heeft verifieerd. Daar kan je de onderstaande method voor gebruiken<br />
+                <a href="https://laravel.com/api/8.x/Illuminate/Auth/MustVerifyEmail.html#method_hasVerifiedEmail">https://laravel.com/api/8.x/Illuminate/Auth/MustVerifyEmail.html#method_hasVerifiedEmail</a><br />
+                &nbsp;</li>
+                <li>Type bij de HomeController.php de onderstaande code en let op het uitroepteken op regel 25!!!!<br />
+                <br />
+                <img alt="Knipsel_69.PNG" src="https://mboutrecht.onderwijsonline.nl/manage/content/lessonfile/YyJ6RgyQ/eyJpdiI6Im05NFMxQlwvS3BxSENBTUc3M1pBZXdBPT0iLCJ2YWx1ZSI6ImsxQzdVZjBSZTBcL1o0OUdnemxaSE9BTGRyeVdVdFp5OXp4VFJSWDhEK3ZzPSIsIm1hYyI6IjE1NjliMTMwNzgxYzhkZWY3MzVmZjVmMTQ4MDk2NmIxOGUwNGMyYTdlZjYyMDQ3YjNlOTY1ZDlmZTdmNDk0ZDMifQ==" style="height:479px; width:720px" /><br />
+                <br />
+                <br />
+                &nbsp;</li>
+                <li>Maak een commit en push met je remote naar heroku</li>
+              </ol>
+              
+              <p>&nbsp;</p>
+              
+              <h4><code>9.3 Deploying a change</code></h4>
+              
+              <p>&nbsp;</p>
+              
+              <div style="background:#eeeeee;border:1px solid #cccccc;padding:5px 10px;"><strong>10 Conclusion</strong></div>
+              
+              <h4><br />
+              <code>10.1 Next steps</code></h4>
+              
+              <p>&nbsp;</p>
+              
+              <p>&nbsp;</p>
+              
+              <p>&nbsp;</p>
+              
+              <p>Dit was een het einde van de tweede linkedIn learning cursus <strong>Laravel 6 Essential Training: Testing, Securing and Deploying Apps</strong>. In het volgende semester <code>(week 5 januari 2021)</code> gaan we al het geleerde in de praktijk brengen door het maken van een zelf ontworpen webapplicatie.</p>
+              
+              <p>&nbsp;</p>
+              
+              <p>&nbsp;</p>
+              
           </div>
         </div>
       </div>
